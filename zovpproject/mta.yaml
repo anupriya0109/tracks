@@ -1,0 +1,94 @@
+_schema-version: "3.2"
+ID: zovp-zovpproject
+description: A Fiori application.
+version: 0.0.1
+modules:
+- name: zovp-zovpproject-dest-content
+  type: com.sap.application.content
+  requires:
+  - name: zovp-zovpproject-dest-srv
+    parameters:
+      content-target: true
+  - name: zovp-zovpproject-repo-host
+    parameters:
+      service-key:
+        name: zovp-zovpproject-repo-host-key
+  - name: zovp-zovpproject-uaa
+    parameters:
+      service-key:
+        name: zovp-zovpproject-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: zovp-zovpproject_repo_host
+          ServiceInstanceName: zovp-zovpproject-html5-srv
+          ServiceKeyName: zovp-zovpproject-repo-host-key
+          sap.cloud.service: zovp-zovpproject
+        - Authentication: OAuth2UserTokenExchange
+          Name: zovp-zovpproject_uaa
+          ServiceInstanceName: zovp-zovpproject-xsuaa-srv
+          ServiceKeyName: zovp-zovpproject-uaa-key
+          sap.cloud.service: zovp-zovpproject
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: zovp-zovpproject-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: zovp-zovpproject-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - zovpzovpproject.zip
+      name: zovpzovpproject
+      target-path: resources/
+- name: zovpzovpproject
+  type: html5
+  path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: zovp-zovpproject-dest-srv
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: zovp-zovpproject-dest-srv
+    service-plan: lite
+- name: zovp-zovpproject-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: zovp-zovpproject-xsuaa-srv
+    service-plan: application
+- name: zovp-zovpproject-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: zovp-zovpproject-html5-srv
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

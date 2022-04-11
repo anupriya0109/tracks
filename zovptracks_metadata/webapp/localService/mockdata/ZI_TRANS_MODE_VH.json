@@ -1,0 +1,11 @@
+ [
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_TRANS_MODE_VH('01')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_TRANS_MODE_VH('01')",
+            "type" : "cds_zui_basic_tracks_dash.ZI_TRANS_MODE_VHType"
+          },
+          "vktra" : "01",
+          "trans_mode" : "Road"
+        }
+      ]

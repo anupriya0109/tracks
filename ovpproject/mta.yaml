@@ -1,0 +1,110 @@
+_schema-version: "3.2"
+ID: com-novigo-ovp-ovpproject
+description: A Fiori application.
+version: 0.0.1
+modules:
+- name: com-novigo-ovp-ovpproject-dest-content
+  type: com.sap.application.content
+  requires:
+  - name: com-novigo-ovp-ovpproject-dest-srv
+    parameters:
+      content-target: true
+  - name: com-novigo-ovp-ovpproject-repo-host
+    parameters:
+      service-key:
+        name: com-novigo-ovp-ovpproject-repo-host-key
+  - name: com-novigo-ovp-ovpproject-uaa
+    parameters:
+      service-key:
+        name: com-novigo-ovp-ovpproject-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: com-novigo-ovp-ovpproject_repo_host
+          ServiceInstanceName: com-novigo-ovp-ovpproject-html5-srv
+          ServiceKeyName: com-novigo-ovp-ovpproject-repo-host-key
+          sap.cloud.service: com-novigo-ovp-ovpproject
+        - Authentication: OAuth2UserTokenExchange
+          Name: com-novigo-ovp-ovpproject_uaa
+          ServiceInstanceName: com-novigo-ovp-ovpproject-xsuaa-srv
+          ServiceKeyName: com-novigo-ovp-ovpproject-uaa-key
+          sap.cloud.service: com-novigo-ovp-ovpproject
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: com-novigo-ovp-ovpproject-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: com-novigo-ovp-ovpproject-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - comnovigoovpovpproject.zip
+      name: comnovigoovpovpproject
+      target-path: resources/
+    - artifacts:
+      - ovptracksoverview.zip
+      name: ovptracksoverview
+      target-path: resources/
+- name: comnovigoovpovpproject
+  type: html5
+  path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: ovptracksoverview
+  type: html5
+  path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: com-novigo-ovp-ovpproject-dest-srv
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: com-novigo-ovp-ovpproject-dest-srv
+    service-plan: lite
+- name: com-novigo-ovp-ovpproject-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      tenant-mode: dedicated
+      xsappname: ovpproject-${org}-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: com-novigo-ovp-ovpproject-xsuaa-srv
+    service-plan: application
+- name: com-novigo-ovp-ovpproject-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: com-novigo-ovp-ovpproject-html5-srv
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo

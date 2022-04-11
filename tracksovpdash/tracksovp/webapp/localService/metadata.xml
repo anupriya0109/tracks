@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://10.134.2.110:8443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://10.134.2.110:8443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://10.134.2.110:8443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://10.134.2.110:8443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://10.134.2.110:8443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zui_basic_tracks_dash" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZC_BASIC_TRACKS_DASHType" sap:semantics="aggregate" sap:label="Consumption View for Track for Trucks" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="db_key" Type="Edm.Guid" sap:aggregation-role="dimension" sap:label="NodeID" sap:heading=""/>
+                <Property Name="tor_id" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="ShipmentID" sap:quickinfo="Document"/>
+                <Property Name="tor_cat" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Document Category" sap:quickinfo="Business Document Category"/>
+                <Property Name="trmodcod" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Transportation Mode"/>
+                <Property Name="trans_mode" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:filter-restriction="multi-value" sap:label="Transportation Mode" sap:quickinfo="Description" sap:value-list="fixed-values"/>
+                <Property Name="tspid" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Carrier"/>
+                <Property Name="carr_name" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:filter-restriction="multi-value" sap:label="Carrier" sap:quickinfo="Name 1 of organization" sap:value-list="fixed-values"/>
+                <Property Name="execution" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Execution Status"/>
+                <Property Name="lifecycle" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Life Cycle Status"/>
+                <Property Name="gro_wei_val" Type="Edm.Decimal" Precision="31" Scale="3" sap:aggregation-role="dimension" sap:label="Gross Weight(kg)" sap:quickinfo="Gross Weight Unit of Measure"/>
+                <Property Name="gro_wei_uni" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Gr. Wt UoM" sap:quickinfo="Gross Weight Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="gro_vol_val" Type="Edm.Decimal" Precision="31" Scale="3" sap:aggregation-role="dimension" sap:label="Gross Volume(m3)" sap:quickinfo="Gross Volume Unit of Measure"/>
+                <Property Name="gro_vol_uni" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Gross Vol. UoM" sap:quickinfo="Gross Volume Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="qua_pcs_val" Type="Edm.Decimal" Precision="31" Scale="3" sap:aggregation-role="dimension" sap:label="Quantity(EA)" sap:quickinfo="Quantity Unit of Measure"/>
+                <Property Name="qua_pcs_uni" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Quantity UoM" sap:quickinfo="Quantity Unit of Measure" sap:semantics="unit-of-measure"/>
+                <Property Name="total_distance_km" Type="Edm.Decimal" Precision="31" Scale="3" sap:aggregation-role="measure" sap:label="Distance(KM)" sap:quickinfo="GLEC Calculation UOM" sap:filterable="false"/>
+                <Property Name="zzglec" Type="Edm.Decimal" Precision="31" Scale="0" sap:aggregation-role="measure" sap:label="Default Carbon Emission" sap:quickinfo="GLEC Calculation UOM" sap:filterable="false"/>
+                <Property Name="zzglec_uom" Type="Edm.String" MaxLength="60" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="GLEC UOM" sap:quickinfo="GLEC Calculation UOM"/>
+                <Property Name="zzglec_primary" Type="Edm.Decimal" Precision="31" Scale="0" sap:aggregation-role="measure" sap:label="Primary Carbon Emission" sap:filterable="false"/>
+                <Property Name="zzglec_comb" Type="Edm.String" MaxLength="60" sap:aggregation-role="dimension" sap:filter-restriction="multi-value" sap:label="Carbon Emission" sap:value-list="standard"/>
+                <Property Name="zzglec_carrier" Type="Edm.String" MaxLength="48" sap:aggregation-role="dimension" sap:label="Carrier"/>
+                <Property Name="intensity_factor_comb" Type="Edm.Double" sap:aggregation-role="dimension" sap:filter-restriction="multi-value" sap:label="Intensity Factor" sap:value-list="standard"/>
+                <Property Name="src_locid" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="Location"/>
+                <Property Name="src_name" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="Loc. Description" sap:quickinfo="Location Description"/>
+                <Property Name="src_long" Type="Edm.Double" sap:aggregation-role="dimension" sap:label="Longitude" sap:quickinfo="Longitude Specified in GPS Coordinates"/>
+                <Property Name="src_lat" Type="Edm.Double" sap:aggregation-role="dimension" sap:label="Latitude" sap:quickinfo="Latitude Specified in GPS Coordinates"/>
+                <Property Name="des_locid" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:label="Location"/>
+                <Property Name="des_name" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:label="Loc. Description" sap:quickinfo="Location Description"/>
+                <Property Name="des_long" Type="Edm.Double" sap:aggregation-role="dimension" sap:label="Longitude" sap:quickinfo="Longitude Specified in GPS Coordinates"/>
+                <Property Name="des_lat" Type="Edm.Double" sap:aggregation-role="dimension" sap:label="Latitude" sap:quickinfo="Latitude Specified in GPS Coordinates"/>
+                <Property Name="des_country" Type="Edm.String" MaxLength="15" sap:aggregation-role="dimension" sap:label="Name" sap:quickinfo="Country Name"/>
+                <Property Name="tlane" Type="Edm.String" MaxLength="80" sap:aggregation-role="dimension" sap:label="Transportation Lane"/>
+                <Property Name="load_end_actual_tstmp" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"/>
+                <Property Name="load_end_actual_dt" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Load End Date"/>
+                <Property Name="load_end_actual_ti" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension"/>
+                <Property Name="Load_Date_YearMonth" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension" sap:label="Load End Duration"/>
+            </EntityType>
+            <EntityType Name="ZC_CARRIER_DATAType" sap:semantics="aggregate" sap:label="carrier" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="partner_guid" Type="Edm.Guid" sap:aggregation-role="dimension" sap:label="BP GUID" sap:quickinfo="Business Partner GUID"/>
+                <Property Name="tspid" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:filter-restriction="multi-value" sap:label="Carrier ID" sap:quickinfo="Carrier" sap:value-list="fixed-values"/>
+                <Property Name="zzglec_carrier" Type="Edm.String" MaxLength="48" sap:aggregation-role="dimension" sap:filter-restriction="multi-value" sap:label="Carrier Name" sap:value-list="fixed-values"/>
+                <Property Name="zzglec_comb" Type="Edm.Decimal" Precision="31" Scale="0" sap:aggregation-role="measure" sap:label="Carbon Emission" sap:filterable="false"/>
+                <Property Name="intensity_factor_comb" Type="Edm.Double" sap:aggregation-role="measure" sap:label="Intensity Factor" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ZI_CARRIER_VHType" sap:label="Value Help for Carrier" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="partner"/>
+                </Key>
+                <Property Name="partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Business Partner" sap:quickinfo="Business Partner Number"/>
+                <Property Name="name_org1" Type="Edm.String" MaxLength="40" sap:label="Name 1" sap:quickinfo="Name 1 of organization"/>
+            </EntityType>
+            <EntityType Name="ZI_TRANS_MODE_VHType" sap:label="Value Help for TM Transportation Mode" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="vktra"/>
+                </Key>
+                <Property Name="vktra" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:label="Mode of Transport"/>
+                <Property Name="trans_mode" Type="Edm.String" MaxLength="20" sap:label="Description"/>
+            </EntityType>
+            <EntityContainer Name="cds_zui_basic_tracks_dash_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZC_BASIC_TRACKS_DASH" EntityType="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZC_CARRIER_DATA" EntityType="cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_CARRIER_VH" EntityType="cds_zui_basic_tracks_dash.ZI_CARRIER_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZI_TRANS_MODE_VH" EntityType="cds_zui_basic_tracks_dash.ZI_TRANS_MODE_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/trans_mode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for TM Transportation Mode"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_TRANS_MODE_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="trans_mode"/>
+                                    <PropertyValue Property="ValueListProperty" String="trans_mode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="vktra"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/carr_name" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for Carrier"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_CARRIER_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="carr_name"/>
+                                    <PropertyValue Property="ValueListProperty" String="name_org1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="partner"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/zzglec_comb" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="carrier"/>
+                        <PropertyValue Property="CollectionPath" String="ZC_CARRIER_DATA"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="zzglec_comb"/>
+                                    <PropertyValue Property="ValueListProperty" String="zzglec_comb"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="partner_guid"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="tspid"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="zzglec_carrier"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="intensity_factor_comb"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/intensity_factor_comb" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="carrier"/>
+                        <PropertyValue Property="CollectionPath" String="ZC_CARRIER_DATA"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="intensity_factor_comb"/>
+                                    <PropertyValue Property="ValueListProperty" String="intensity_factor_comb"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="partner_guid"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="tspid"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="zzglec_carrier"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="zzglec_comb"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType/tspid" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for Carrier"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_CARRIER_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="tspid"/>
+                                    <PropertyValue Property="ValueListProperty" String="partner"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="name_org1"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType/zzglec_carrier" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for Carrier"/>
+                        <PropertyValue Property="CollectionPath" String="ZI_CARRIER_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="zzglec_carrier"/>
+                                    <PropertyValue Property="ValueListProperty" String="name_org1"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="partner"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.cds_zui_basic_tracks_dash_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.cds_zui_basic_tracks_dash_Entities/ZC_BASIC_TRACKS_DASH" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>total_distance_km</PropertyPath>
+                                <PropertyPath>zzglec</PropertyPath>
+                                <PropertyPath>zzglec_primary</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="trans_mode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="carr_name"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="zzglec_comb"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="intensity_factor_comb"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="load_end_actual_dt"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.cds_zui_basic_tracks_dash_Entities/ZC_CARRIER_DATA" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                                <PropertyPath>zzglec_comb</PropertyPath>
+                                <PropertyPath>intensity_factor_comb</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="tspid"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="zzglec_carrier"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>ID</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>tor_id</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/Load_Date_YearMonth" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.IsCalendarYearQuarter"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/load_end_actual_dt" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FilterDefaultValueHigh" Date="2021-06-19"/>
+            </Annotations>
+            <atom:link rel="self" href="http://10.134.2.110:8443/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://10.134.2.110:8443/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

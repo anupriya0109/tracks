@@ -1,0 +1,188 @@
+{
+    "_version": "1.17.0",
+    "sap.app": {
+        "id": "zovp.zovpproject",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "tags": {
+            "keywords": []
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "annotations": [
+                        "ZUI_C_BASIC_TRACKS_DASH_VAN",
+                        "annotation"
+                    ],
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "ZUI_C_BASIC_TRACKS_DASH_VAN": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_C_BASIC_TRACKS_DASH_VAN',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/ZUI_C_BASIC_TRACKS_DASH_VAN.xml"
+                }
+            },
+            "annotation": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml",
+                "settings": {
+                    "localUri": "annotations/annotation.xml"
+                }
+            }
+        },
+        "offline": false,
+        "sourceTemplate": {
+            "id": "OVP.smartovptemplate",
+            "version": "1.41.1"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "resources": {
+            "js": [],
+            "css": []
+        },
+        "dependencies": {
+            "minUI5Version": "1.97.2",
+            "libs": {
+                "sap.ovp": {}
+            },
+            "components": {}
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties",
+                "preload": false
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "mainService": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultCountMode": "Inline"
+                }
+            }
+        },
+        "extends": {
+            "extensions": {}
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "analytical"
+    },
+    "sap.ovp": {
+        "globalFilterModel": "mainService",
+        "globalFilterEntityType": "ZC_BASIC_TRACKS_DASHType",
+        "containerLayout": "resizable",
+        "enableLiveFilter": true,
+        "considerAnalyticalParameters": false,
+        "cards": {
+            "co2EmissionPerQuarter": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Total Co2 Emission per Quarter",
+                    "entitySet": "ZC_BASIC_TRACKS_DASH",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpco2EmissionPerQuarter",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvco2EmissionPerQuarter",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#co2EmissionPerQuarter",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ico2EmissionPerQuarter"
+                }
+            },
+            "co2EmissionPerCarrier": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Total Co2 Emission per Carrier",
+                    "entitySet": "ZC_BASIC_TRACKS_DASH",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpco2EmissionPerCarrier",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvco2EmissionPerCarrier",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#co2EmissionPerCarrier",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ico2EmissionPerCarrier"
+                }
+            },
+            "co2EmissionPerTLane": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.charts.analytical",
+                "settings": {
+                    "title": "Total CO2 EMissions per Transportation Lane",
+                    "entitySet": "ZC_BASIC_TRACKS_DASH",
+                    "dataPointAnnotationPath": "com.sap.vocabularies.UI.v1.DataPoint#dpco2EmissionPerTLane",
+                    "presentationAnnotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant#pvco2EmissionPerTLane",
+                    "chartAnnotationPath": "com.sap.vocabularies.UI.v1.Chart#co2EmissionPerTLane",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification#ico2EmissionPerTLane"
+                }
+            },
+            "carrierDetail": {
+                "model": "mainService",
+                "template": "sap.ovp.cards.stack",
+                "settings": {
+                    "title": "Carrier Details",
+                    "entitySet": "ZC_CARRIER_DATA",
+                    "identificationAnnotationPath": "com.sap.vocabularies.UI.v1.Identification",
+                    "objectStreamCardsSettings": {
+                        "annotationPath": "com.sap.vocabularies.UI.v1.Facets"
+                    }
+                }
+            }
+        },
+        "chartSettings": {
+            "showDataLabel": true
+        },
+        "filterSettings": {
+            "dateSettings": {
+                "fields": {
+                    "load_end_actual_dt": {
+                        "selectedValues": "LASTQUARTERS,LASTMONTHS",
+                        "exclude": false
+                    }
+                }
+            }
+        }
+    },
+    "sap.ui.generic.app": {
+        "settings": {}
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "zovp-zovpproject"
+    }
+}

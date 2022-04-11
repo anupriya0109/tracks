@@ -1,0 +1,70 @@
+_schema-version: "3.2"
+ID: tracksovp
+version: 0.0.1
+modules:
+- name: tracksovp-approuter
+  type: approuter.nodejs
+  path: approuter
+  requires:
+  - name: tracksovp_html_repo_runtime
+  - name: uaa_novigo
+  - name: tracksovp_destination
+  - name: tracksovp_connectivity
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: tracksovp_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: tracksovp_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - tracksovp-content.zip
+      name: tracksovp
+      target-path: resources/
+- name: tracksovp
+  type: html5
+  path: tracksovp
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: tracksovp_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: tracksovp_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: uaa_novigo
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: tracksovp-xsuaa-service
+    service-plan: application
+- name: tracksovp_destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service-plan: lite
+    service: destination
+- name: tracksovp_connectivity
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service-plan: lite
+    service: connectivity
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install

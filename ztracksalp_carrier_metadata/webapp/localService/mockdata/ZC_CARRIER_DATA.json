@@ -1,0 +1,41 @@
+[{
+    "__metadata": {
+        "id": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR1')",
+        "uri": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR1')",
+        "type": "cds_zui_carrier_data.ZI_CARRIER_VHType"
+    },
+    "partner": "SUS_CARR1",
+    "name_org1": "Cargo PtD"
+}, {
+    "__metadata": {
+        "id": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR2')",
+        "uri": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR2')",
+        "type": "cds_zui_carrier_data.ZI_CARRIER_VHType"
+    },
+    "partner": "SUS_CARR2",
+    "name_org1": "Meyer Spedition & Co KG"
+}, {
+    "__metadata": {
+        "id": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR3')",
+        "uri": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR3')",
+        "type": "cds_zui_carrier_data.ZI_CARRIER_VHType"
+    },
+    "partner": "SUS_CARR3",
+    "name_org1": "Logistik Walther GmbH"
+}, {
+    "__metadata": {
+        "id": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR5')",
+        "uri": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR5')",
+        "type": "cds_zui_carrier_data.ZI_CARRIER_VHType"
+    },
+    "partner": "SUS_CARR5",
+    "name_org1": "International Transports Ava Lmtd."
+}, {
+    "__metadata": {
+        "id": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR6')",
+        "uri": "https://vm2110.sapls.local:8443/sap/opu/odata/sap/ZUI_C_CARRIER_DATA;v=0001/ZI_CARRIER_VH('SUS_CARR6')",
+        "type": "cds_zui_carrier_data.ZI_CARRIER_VHType"
+    },
+    "partner": "SUS_CARR6",
+    "name_org1": "Silda Freight Logistics"
+}]

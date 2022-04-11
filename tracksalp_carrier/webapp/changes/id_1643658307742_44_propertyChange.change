@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1643658307742_44_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "alp.tracksalpcarrier",
+    "packageName": "",
+    "content": {
+        "property": "showDownloadButton",
+        "newValue": true
+    },
+    "selector": {
+        "id": "alp.tracksalpcarrier::sap.suite.ui.generic.template.AnalyticalListPage.view.AnalyticalListPage::ZC_CARRIER_DATA--chart",
+        "idIsLocal": false,
+        "type": "sap.ui.comp.smartchart.SmartChart"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/alp.tracksalpcarrier/changes/",
+    "projectId": "alp.tracksalpcarrier",
+    "creation": 1643658307742,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "latest",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "1.0.0",
+        "to": "1.0.0",
+        "creation": "1.0.0"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}

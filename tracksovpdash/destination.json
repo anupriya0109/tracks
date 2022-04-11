@@ -1,0 +1,20 @@
+{
+    "HTML5Runtime_enabled": true,
+    "version": "1.0.0",
+    "init_date":{
+        "instance":{
+            "existing_destination_policy": "update",
+            "destination":[
+                {
+                    "Name": "tracksovpdash",
+                    "Description": "CO2e Report",
+                    "Authentication": "NoAuthentication",
+                    "ProxyType": "Internet",
+                    "Type": "HTTP",
+                    "URL": "https://services.odata.org",
+                    "HTML5.DynamicDestination": true
+                }
+            ]
+        }
+    }
+}

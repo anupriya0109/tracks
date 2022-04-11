@@ -1,0 +1,47 @@
+[
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR1')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR1')",
+            "type" : "cds_zui_basic_tracks_dash.ZI_CARRIER_VHType"
+          },
+          "partner" : "SUS_CARR1",
+          "name_org1" : "Cargo PtD"
+        },
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR2')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR2')",
+            "type" : "cds_zui_basic_tracks_dash.ZI_CARRIER_VHType"
+          },
+          "partner" : "SUS_CARR2",
+          "name_org1" : "Meyer Spedition & Co KG"
+        },
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR3')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR3')",
+            "type" : "cds_zui_basic_tracks_dash.ZI_CARRIER_VHType"
+          },
+          "partner" : "SUS_CARR3",
+          "name_org1" : "Logistik Walther GmbH"
+        },
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR5')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR5')",
+            "type" : "cds_zui_basic_tracks_dash.ZI_CARRIER_VHType"
+          },
+          "partner" : "SUS_CARR5",
+          "name_org1" : "International Transports Ava Lmtd."
+        },
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR6')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZI_CARRIER_VH('SUS_CARR6')",
+            "type" : "cds_zui_basic_tracks_dash.ZI_CARRIER_VHType"
+          },
+          "partner" : "SUS_CARR6",
+          "name_org1" : "Silda Freight Logistics"
+        }
+      ]

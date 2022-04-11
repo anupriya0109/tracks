@@ -1,0 +1,62 @@
+[
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB189E93FB50150')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB189E93FB50150')",
+            "type" : "cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType"
+          },
+          "ID" : ".1~005056BA9D851EDC8BB189E93FB50150",
+          "partner_guid" : "005056ba-9d85-1edc-8bb1-89e93fb50150",
+          "tspid" : "SUS_CARR1",
+          "zzglec_carrier" : "Cargo PtD/Primary",
+          "zzglec" : "1841",
+          "zzglec_primary" : "745",
+          "zzglec_comb" : "745",
+          "intensity_factor_comb" : "1.6275020804554297E-1"
+        },
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB1E0E1CAC601D6')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB1E0E1CAC601D6')",
+            "type" : "cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType"
+          },
+          "ID" : ".1~005056BA9D851EDC8BB1E0E1CAC601D6",
+          "partner_guid" : "005056ba-9d85-1edc-8bb1-e0e1cac601d6",
+          "tspid" : "SUS_CARR2",
+          "zzglec_carrier" : "Meyer Spedition & Co KG/Primary",
+          "zzglec" : "1590",
+          "zzglec_primary" : "503",
+          "zzglec_comb" : "503",
+          "intensity_factor_comb" : "5.9210559736849938E-2"
+        },
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB1F063652981F1')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB1F063652981F1')",
+            "type" : "cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType"
+          },
+          "ID" : ".1~005056BA9D851EDC8BB1F063652981F1",
+          "partner_guid" : "005056ba-9d85-1edc-8bb1-f063652981f1",
+          "tspid" : "SUS_CARR3",
+          "zzglec_carrier" : "Logistik Walther GmbH/Primary",
+          "zzglec" : "443",
+          "zzglec_primary" : "166",
+          "zzglec_comb" : "166",
+          "intensity_factor_comb" : "5.0209972805814261E-2"
+        },
+        {
+          "__metadata" : {
+            "id" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB82788B0BB4ACA')",
+            "uri" : "http://vm2110.sapls.local:8000/sap/opu/odata/sap/ZUI_C_BASIC_TRACKS_DASH/ZC_CARRIER_DATA('.1~005056BA9D851EDC8BB82788B0BB4ACA')",
+            "type" : "cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType"
+          },
+          "ID" : ".1~005056BA9D851EDC8BB82788B0BB4ACA",
+          "partner_guid" : "005056ba-9d85-1edc-8bb8-2788b0bb4aca",
+          "tspid" : "SUS_CARR5",
+          "zzglec_carrier" : "International Transports Ava Lmtd./Primary",
+          "zzglec" : "3632",
+          "zzglec_primary" : "604",
+          "zzglec_comb" : "604",
+          "intensity_factor_comb" : "1.0734002648171694E-1"
+        }
+      ]

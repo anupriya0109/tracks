@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zui_c_basic_tracks_dash/$metadata">
+        <edmx:Include Namespace="ZUI_C_BASIC_TRACKS_DASH" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zui_c_basic_tracks_dash_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/tspid">
+                <Annotation Term="UI.HiddenFilter"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_BASIC_TRACKS_DASHType">
+                <Annotation Term="UI.DataPoint" Qualifier="Load_Date_YearMonth">
+                    <Record>
+                        <PropertyValue Property="Value" Path="Load_Date_YearMonth"/>
+                        <PropertyValue Property="Title" String="Load End Duration"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="Load_Date_YearQuarter">
+                    <Record>
+                        <PropertyValue Property="Value" Path="Load_Date_YearQuarter"/>
+                        <PropertyValue Property="Title" String="Load End Duration"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="carr_name">
+                    <Record>
+                        <PropertyValue Property="Value" Path="carr_name"/>
+                        <PropertyValue Property="Title" String="Carrier"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="des_country">
+                    <Record>
+                        <PropertyValue Property="Value" Path="des_country"/>
+                        <PropertyValue Property="Title" String="Destination Country"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="des_lat">
+                    <Record>
+                        <PropertyValue Property="Value" Path="des_lat"/>
+                        <PropertyValue Property="Title" String="Destination Latitude"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="des_long">
+                    <Record>
+                        <PropertyValue Property="Value" Path="des_long"/>
+                        <PropertyValue Property="Title" String="Destination Longitude"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="des_name">
+                    <Record>
+                        <PropertyValue Property="Value" Path="des_name"/>
+                        <PropertyValue Property="Title" String="Destination Loc Name"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="gro_vol_val">
+                    <Record>
+                        <PropertyValue Property="Value" Path="gro_vol_val"/>
+                        <PropertyValue Property="Title" String="Gross Volume(m3)"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="gro_wei_val">
+                    <Record>
+                        <PropertyValue Property="Value" Path="gro_wei_val"/>
+                        <PropertyValue Property="Title" String="Gross Weight(kg)"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="intensity_factor_comb">
+                    <Record>
+                        <PropertyValue Property="Value" Path="intensity_factor_comb"/>
+                        <PropertyValue Property="Title" String="Intensity Factor"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="load_end_actual_dt">
+                    <Record>
+                        <PropertyValue Property="Value" Path="load_end_actual_dt"/>
+                        <PropertyValue Property="Title" String="Time Period"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="qua_pcs_val">
+                    <Record>
+                        <PropertyValue Property="Value" Path="qua_pcs_val"/>
+                        <PropertyValue Property="Title" String="Quantity(EA)"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="src_lat">
+                    <Record>
+                        <PropertyValue Property="Value" Path="src_lat"/>
+                        <PropertyValue Property="Title" String="Source Latitude"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="src_long">
+                    <Record>
+                        <PropertyValue Property="Value" Path="src_long"/>
+                        <PropertyValue Property="Title" String="Source Longitude"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="src_name">
+                    <Record>
+                        <PropertyValue Property="Value" Path="src_name"/>
+                        <PropertyValue Property="Title" String="Source Loc Name"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="tlane">
+                    <Record>
+                        <PropertyValue Property="Value" Path="tlane"/>
+                        <PropertyValue Property="Title" String="Transportation Lane"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="tor_id">
+                    <Record>
+                        <PropertyValue Property="Value" Path="tor_id"/>
+                        <PropertyValue Property="Title" String="ShipmentID"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="total_distance_km">
+                    <Record>
+                        <PropertyValue Property="Value" Path="total_distance_km"/>
+                        <PropertyValue Property="Title" String="Distance(KM)"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="trans_mode">
+                    <Record>
+                        <PropertyValue Property="Value" Path="trans_mode"/>
+                        <PropertyValue Property="Title" String="TMode"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec"/>
+                        <PropertyValue Property="Title" String="Default Carbon Emission"/>
+                        <PropertyValue Property="Criticality" Path="zzglec"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec_carrier">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec_carrier"/>
+                        <PropertyValue Property="Title" String="Carrier"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec_comb">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec_comb"/>
+                        <PropertyValue Property="Title" String="Carbon Emission"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec_primary">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec_primary"/>
+                        <PropertyValue Property="Title" String="Primary Carbon Emission"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec_uom">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec_uom"/>
+                        <PropertyValue Property="Title" String="Default Carbon Emission Unit"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Carbon Emission information"/>
+                            <PropertyValue Property="ID" String="Tracks"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Shipment Detail"/>
+                        <PropertyValue Property="TypeNamePlural" String=" Shipment Details"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="tor_id"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="tor_id"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="trans_mode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="carr_name"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="gro_wei_val"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="gro_vol_val"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="qua_pcs_val"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="total_distance_km"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="tor_id"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="trans_mode"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="carr_name"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="gro_wei_val"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="gro_vol_val"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="qua_pcs_val"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="total_distance_km"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Criticality" Path="zzglec"/>
+                            <PropertyValue Property="CriticalityRepresentation" EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                            <PropertyValue Property="Value" Path="zzglec"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.PresentationVariant">
+                    <Record>
+                        <PropertyValue Property="SortOrder">
+                            <Collection>
+                                <Record Type="Common.SortOrderType">
+                                    <PropertyValue Property="Property" PropertyPath="tor_id"/>
+                                    <PropertyValue Property="Descending" Bool="false"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.LineItem</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>tor_id</PropertyPath>
+                        <PropertyPath>trans_mode</PropertyPath>
+                        <PropertyPath>load_end_actual_dt</PropertyPath>
+                        <PropertyPath>carr_name</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType/ID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_basic_tracks_dash.ZC_CARRIER_DATAType">
+                <Annotation Term="UI.DataPoint" Qualifier="intensity_factor_comb">
+                    <Record>
+                        <PropertyValue Property="Value" Path="intensity_factor_comb"/>
+                        <PropertyValue Property="Title" String="Intensity Factor"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="tspid">
+                    <Record>
+                        <PropertyValue Property="Value" Path="tspid"/>
+                        <PropertyValue Property="Title" String="Carrier ID"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec"/>
+                        <PropertyValue Property="Title" String="Default Carbon Emission"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec_carrier">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec_carrier"/>
+                        <PropertyValue Property="Title" String="Carrier Name"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec_comb">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec_comb"/>
+                        <PropertyValue Property="Title" String="Carbon Emission"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="zzglec_primary">
+                    <Record>
+                        <PropertyValue Property="Value" Path="zzglec_primary"/>
+                        <PropertyValue Property="Title" String="Primary Carbon Emission"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="tspid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec_carrier"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec_comb"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec_primary"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="intensity_factor_comb"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="tspid"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec_carrier"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec_comb"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec_primary"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="zzglec"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="intensity_factor_comb"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>tspid</PropertyPath>
+                        <PropertyPath>zzglec_carrier</PropertyPath>
+                        <PropertyPath>zzglec_comb</PropertyPath>
+                        <PropertyPath>zzglec_primary</PropertyPath>
+                        <PropertyPath>zzglec</PropertyPath>
+                        <PropertyPath>intensity_factor_comb</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
